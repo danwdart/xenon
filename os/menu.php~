@@ -1,0 +1,207 @@
+<style>
+#moon,#moon2,#moon3,#moon4,#moon5 {
+position:absolute;
+left:200;
+top:200;
+height:120;
+width:100;
+}
+
+#earth {
+position:absolute;
+left:250;
+top:200;
+height:120;
+width:100;
+}
+
+#leftpanel {
+position: absolute;
+background-color: black;
+width:200px;
+height: 500;
+left:0px;
+top:0px;
+color: white;
+}
+#centrepanel {
+position: absolute;
+background-color: white;
+width: 600px;
+height:500;
+left: 200px;
+top:0px;
+}
+#rightpanel {
+position: absolute;
+background-color: black;
+width: 200px;
+height:500;
+left: 800px;
+top: 0px;
+color: white;
+}
+
+
+</style>
+<script type="text/javascript">
+<!--
+var numdegrees=0;
+
+
+var number=0;
+var multiplier=1.0;
+
+
+function spinmoon(id,angle) {
+
+var themoon=document.getElementById(id);
+
+sinvalue=Math.sin((numdegrees+angle)*(Math.PI/180))
+cosvalue=Math.cos((numdegrees+angle)*(Math.PI/180))
+
+themoon.style.top=Math.floor(200-80*cosvalue)+"px";
+themoon.style.left=Math.floor(250+200*sinvalue)+"px";
+
+ themoon.style.height=(Math.floor(90-36*cosvalue))+"px";
+ themoon.style.width=(Math.floor(70-30*cosvalue))+"px";
+
+
+/*
+document.getElementById('angle').innerHTML=numdegrees+" degrees";
+document.getElementById('speed').innerHTML=+number;
+*/
+}
+
+function init() {
+spinmoon("moon",0);
+spinmoon("moon2",72);
+spinmoon("moon3",144);
+spinmoon("moon4",216);
+spinmoon("moon5",288);
+
+document.getElementById('leftpanel').innerHTML=numdegrees+" degrees.";
+
+if (-337 <= numdegrees <= -312) {
+document.getElementById('moon').height*=10;
+
+}
+else {
+document.getElementById('moon').src="internet.png";
+}
+
+// numdegrees=mousex*600+"px";
+
+
+timer=setTimeout("init();",10);
+// numdegrees+=number;
+//  if (numdegrees >= 360) { numdegrees=0; }
+
+}
+
+//	Begin App Categories
+function internet() {
+document.getElementById('earth').src="internet.png";
+document.getElementById('earth').onclick= menu;
+
+document.getElementById('moon').src="voip.png";
+document.getElementById('moon').onclick = voip;
+
+document.getElementById('moon2').src="im.png";
+document.getElementById('moon2').onclick = im;
+
+document.getElementById('moon3').src="email.png";
+document.getElementById('moon3').onclick = email;
+
+document.getElementById('moon4').src="browser.png";
+document.getElementById('moon4').onclick = browser;
+
+document.getElementById('moon5').src="";
+document.getElementById('moon5').onclick="";
+
+}
+
+function work() {
+document.getElementById('earth').src="work.png";
+document.getElementById('earth').onclick= menu;
+}
+
+function games() {
+document.getElementById('earth').src="games.png";
+document.getElementById('earth').onclick= menu;
+}
+
+function media() {
+document.getElementById('earth').src="media.png";
+document.getElementById('earth').onclick= menu;
+}
+
+function myfiles() {
+alert ("My Files function not yet implemented.");
+}
+
+//	End App Categories
+//	Begin Menu Switchback
+function menu() {
+document.getElementById('earth').src="atom.png";
+document.getElementById('earth').onclick="";
+document.getElementById('moon').src="internet.png";
+document.getElementById('moon').onclick = internet;
+document.getElementById('moon2').src="work.png";
+document.getElementById('moon2').onclick = work;
+document.getElementById('moon3').src="games.png";
+document.getElementById('moon3').onclick = games;
+document.getElementById('moon4').src="media.png";
+document.getElementById('moon4').onclick = media;
+document.getElementById('moon5').src="myfiles.png";
+document.getElementById('moon5').onclick = myfiles;
+}
+//	End Menu Switchback
+
+//	Start Apps
+
+function voip() {
+alert ("VOIP function not yet implemented.");
+}
+
+function im() {
+alert ("IM function not yet implemented.");
+}
+
+function email() {
+alert ("Email function not yet implemented.");
+}
+function browser() {
+alert ("Browser function not yet implemented.");
+}
+
+//	End Apps
+
+//-->
+</script>
+<div id="leftpanel">
+Here goes a weather feed.
+</div>
+<div id="centrepanel" onmousemove="numdegrees=-0.6*event.clientX;">
+<img src="atom.png" id="earth" alt="Earth" />
+<img src="internet.png" alt="Moon" id="moon" onclick="internet();" />
+<img src="work.png" alt="Moon" id="moon2" onclick="work();" />
+<img src="games.png" alt="Moon" id="moon3" onclick="games();" />
+<img src="media.png" alt="Moon" id="moon4" onclick="media();" />
+<img src="myfiles.png" alt="Moon" id="moon5"  onclick="myfiles();"/>
+</div>
+<div id="rightpanel">
+<p>Latest News:</p>
+<p></p>
+<p>Building this!</p>
+</div>
+
+<!--
+<div onclick="number-=0.5;">Slower</div>
+<div onclick="number+=0.5;">Faster</div>
+Angle: <div id="angle"></div>
+Speed: <div id="speed"></div>
+-->
+<!--
+<div id="debug" style="color:white;">This number should change.</div>
+-->

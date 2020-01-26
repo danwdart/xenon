@@ -1,0 +1,19 @@
+#session {
+	left:50%;
+	margin-left:-15em;
+	margin-top:-9em;
+	position:absolute;
+	top:35%;
+	width:30em;
+}
+#session table {
+	border:none;
+    border-collapse:collapse;
+	margin:auto;	
+}
+#session th, td {
+    padding:4px;
+}
+#session select {
+	width:100%;
+}

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Xenon - Register</title>
+<style type="text/css">
+body {
+color: black;
+background-color: white;
+}
+#indent {
+position: relative;
+left: 200px;
+}
+</style>
+<script type="text/javascript">
+<!--
+
+function verify() {
+if ( document.newuser.password.value != document.newuser.password2.value) {
+alert ("Passwords not the same. Please enter the same password twice.");
+return false;
+}
+if ( document.newuser.password.length < 6 )
+{
+alert ("Your password must be at least 6 characters in length.");
+return false;
+}
+if ( document.newuser.username.value == "" ||
+document.newuser.fname.value == "" ||
+document.newuser.lname.value == "" ||
+document.newuser.password.value == "" ||
+document.newuser.email.value == "" )
+{
+alert ("You have not filled in all required fields.");
+return false;
+}
+else
+{
+return true;
+}
+// -->
+</script>
+</head>
+<body>
+<h1>New User</h1>
+<p>Please enter your details. Details with a * are essential.</p>
+<form name="newuser" action="registered.php" method="post" onSubmit="return verify();" >
+<p>Username*:		<div id="indent"><input type="text" name="username" /></div></p>
+<p>First Name*: 	<div id="indent"><input type="text" name="fname" /></div></p>
+<p>Last Name*:		<div id="indent"><input type="text" name="lname" /></div></p>
+<p>Password*:		<div id="indent"><input type="password" name="password" /></div></p>
+<p>Password (repeat)*:	<div id="indent"><input type="password" name="password2" /></div></p>
+<p>Email Address:	<div id="indent"><input type="text" name="email" /></div></p>
+<p><input type="submit" name="submit" value="Register" />
+</form>
+</body>
+</html>

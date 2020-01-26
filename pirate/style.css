@@ -1,0 +1,59 @@
+body {
+background-color: white;
+color: black;
+}
+
+
+#menu {
+/* background-color: gray; */
+color: black;
+background-image: url('themes/crystal/background.png');
+background-repeat: repeat;
+width: 1000px;
+height: 600px;
+}
+
+#moon1,#moon2,#moon3,#moon4,#moon5 {
+height: 64px;
+width: 64px;
+position:absolute;
+}
+#text1,#text2,#text3,#text4,#text5 {
+position:absolute;
+display:none;
+font-size: 12pt;
+font-weight: 700;
+color: black;
+background-color: white;
+}
+
+#earth {
+height: 128px;
+width: 256px;
+position: absolute;
+left: 400px;
+top: 472px;
+}
+
+#moon1 {
+left: 691px;
+top: 490px;
+}
+
+#moon2 {
+left: 610px;
+top: 409px;
+}
+#moon3 {
+left: 500px;
+top: 380px;
+}
+#moon4 {
+left: 390px;
+top: 409px;
+}
+#moon5 {
+left: 309px;
+top: 490px;
+}
+

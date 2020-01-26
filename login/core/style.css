@@ -1,0 +1,149 @@
+/*
+	Project: 		The Xenon Project 2009.
+	File: 			xenon_base.css
+	Description: 	Cascading style sheet for the Xenon base system.
+	
+	Author: 		Sven Kerschbaum <sven.kerschbaum@t-online.de>
+	Date: 			06. April 2009
+*/
+html {
+	overflow:auto; 
+}
+body {
+	background-color:#FFF non repeat;
+	color:#000;
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+	height:100%;
+	min-height:100%;
+	margin:0;
+	padding:0;
+	text-align:left;
+}
+
+#all {
+	display:block;
+	margin:0 auto;
+	position:relative;
+	width:1000px;
+	height:600px;
+	z-index:1;
+}
+#header {
+	/*position:absolute;
+	top:0px;
+	left:0px;*/
+	padding-left:0px;
+	padding-top:0px;
+	height:50px;
+	width:1000px;
+	background-color:#6666ff;
+	background-image:url(./../img/logos/xenon.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+#content {
+	height:500px;
+	width:1000px;
+	color:#000;
+	background-color: #FFF;
+	background-image:url(./../img/backgrounds/clouds.jpg);
+	background-repeat:no-repeat;
+}
+#footer {
+	height:50px;
+	width:1000px;
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:9px;
+	background-color:#9999ff;
+}
+#footer table {
+	border:none;
+    border-collapse:collapse;
+	height:100%;
+	width:100%;
+}
+#footer th, td {
+    padding:0 8px;
+}
+
+#footer #footer-left {
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:9px;
+	width:15%;
+}
+#footer #footer-status {
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+	width:70%;
+}
+#footer #footer-right {
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:9px;
+	width:15%;
+}
+
+.halignleft {
+	text-align:left;
+}
+.haligncenter {
+	text-align:center;
+}
+.halignright {
+	text-align:right;
+}
+.valigntop {
+	vertical-align:top;
+}
+.valignmiddle {
+	vertical-align:middle;
+}
+.valignbottom {
+	vertical-align:bottom;
+}
+.floatleft {
+	float:left;
+}
+.floatright {
+	float:right;
+}
+.marginauto {
+	margin:auto;
+}
+
+/* Visual HTML elements */
+.inputtext {
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+}
+.button {
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+}
+.inputselect {
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:12px;
+}
+.error {
+	background:#FFEBE8 none repeat scroll 0 0;
+	border:1px solid #DD3C10;
+	line-height:15px;
+	padding:8px;
+	overflow:hidden;
+	text-align:center;
+}
+.error-hidden {
+	visibility: hidden;
+}
+.success {
+	background:#9ECDED none repeat scroll 0 0;
+	border:1px solid #DD3C10;
+	line-height:15px;
+	padding:8px;
+	overflow:hidden;
+	text-align:center;
+}
+
+.invisible {
+	display:none;
+}

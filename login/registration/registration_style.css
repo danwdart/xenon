@@ -1,0 +1,19 @@
+#registration {
+	left:50%;
+	margin-left:-15em;
+	margin-top:-9em;
+	position:absolute;
+	top:35%;
+	width:30em;
+}
+#registration table {
+	border:none;
+    border-collapse:collapse;
+	margin:auto;	
+}
+#registration th, td {
+    padding:4px;
+}
+#registration select {
+	width:100%;
+}

@@ -1,0 +1,293 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+<title>Welcome to the Xenon System</title>
+<style type="text/css">
+body {
+background-color: gray;
+}
+#main {
+position:absolute;
+top: 0px;
+left: 0px;
+padding-left: 0px;
+padding-top:0px;
+width: 1000px;
+height:600px;
+background-color: white;
+}
+
+#toppanel {
+position:absolute;
+top: 0px;
+left: 0px;
+padding-left: 0px;
+padding-top:0px;
+height: 50px; 
+width: 1000px;
+background-color: silver;
+}
+#inside {
+position:absolute;
+top: 50px;
+left: 0px;
+padding-left: 0px;
+padding-top:0px;
+height: 500px;
+width:1000px;
+}
+
+#inside2 {
+position:absolute;
+top: 50px;
+left: 0px;
+padding-left: 0px;
+padding-top:0px;
+height: 500px;
+width:1000px;
+color: black;
+background-color: white;
+}
+
+#bottompanel {
+position:absolute;
+top: 550px;
+left: 0px;
+padding-left: 0px;
+padding-top:0px;
+height: 50px;
+width:1000px;
+background-color: silver;
+}
+
+#moon,#moon2,#moon3,#moon4,#moon5 {
+position:absolute;
+left:200px;
+top:200px;
+height:108px;
+width:90px;
+}
+
+#earth {
+position:absolute;
+left:250px;
+top:200px;
+height:120px;
+width:100px;
+}
+
+#leftpanel {
+position: absolute;
+background-color: black;
+width:200px;
+height: 500px;
+left:0px;
+top:0px;
+color: white;
+}
+#centrepanel {
+position: absolute;
+background-color: white;
+width: 600px;
+height:500px;
+left: 200px;
+top:0px;
+display: inline;
+}
+
+
+
+#rightpanel {
+position: absolute;
+background-color: black;
+width: 200px;
+height:500px;
+left: 800px;
+top: 0px;
+color: white;
+}
+
+</style>
+<script type="text/javascript">
+<!--
+var numdegrees=0;
+var number=0.2;
+
+function spinmoon(id,angle) {
+
+var themoon=document.getElementById(id);
+
+sinvalue=Math.sin((numdegrees+angle)*(Math.PI/180))
+cosvalue=Math.cos((numdegrees+angle)*(Math.PI/180))
+
+themoon.style.top=Math.floor(200-150*cosvalue)+"px";  // 80last
+themoon.style.left=Math.floor(250+200*sinvalue)+"px";
+/*
+ themoon.style.height=(Math.floor(90-36*cosvalue))+"px";
+ themoon.style.width=(Math.floor(70-30*cosvalue))+"px";
+*/
+}
+
+function init() {
+spinmoon("moon",0);
+spinmoon("moon2",72);
+spinmoon("moon3",144);
+spinmoon("moon4",216);
+spinmoon("moon5",288);
+
+
+
+// Validity Adjustment
+if (numdegrees >= 360) {
+numdegrees=0;
+}
+if (numdegrees < 0) {
+numdegrees = 360;
+}
+
+numdegrees+=number;
+timer=setTimeout("init();",20);
+
+}
+
+function getbigger(id) {
+document.getElementById(id).style.height="120px";
+document.getElementById(id).style.width="100px";
+}
+
+function getsmaller(id) {
+document.getElementById(id).style.height="108px";
+document.getElementById(id).style.width="90px";
+}
+//	Begin App Categories
+function internet() {
+document.getElementById('earth').src="back.png";
+document.getElementById('earth').onclick= menu;
+
+document.getElementById('moon').src="voip.png";
+document.getElementById('moon').onclick = voip;
+
+document.getElementById('moon2').src="im.png";
+document.getElementById('moon2').onclick = im;
+
+document.getElementById('moon3').src="email.png";
+document.getElementById('moon3').onclick = email;
+
+document.getElementById('moon4').src="browser.png";
+document.getElementById('moon4').onclick = browser;
+
+document.getElementById('moon5').src="";
+document.getElementById('moon5').onclick="";
+}
+
+function work() {
+document.getElementById('earth').src="back.png";
+document.getElementById('earth').onclick= menu;
+}
+
+function games() {
+document.getElementById('earth').src="back.png";
+document.getElementById('earth').onclick= menu;
+}
+
+function media() {
+document.getElementById('earth').src="back.png";
+document.getElementById('earth').onclick= menu;
+}
+
+function myfiles() {
+alert ("My Files function not yet implemented.");
+}
+
+//	End App Categories
+//	Begin Menu Switchback
+function menu() {
+document.getElementById('earth').src="atom.png";
+document.getElementById('earth').onclick="";
+document.getElementById('moon').src="internet.png";
+document.getElementById('moon').onclick = internet;
+document.getElementById('moon2').src="work.png";
+document.getElementById('moon2').onclick = work;
+document.getElementById('moon3').src="games.png";
+document.getElementById('moon3').onclick = games;
+document.getElementById('moon4').src="media.png";
+document.getElementById('moon4').onclick = media;
+document.getElementById('moon5').src="myfiles.png";
+document.getElementById('moon5').onclick = myfiles;
+}
+//	End Menu Switchback
+
+//	Start Apps
+
+function voip() {
+alert ("VOIP function not yet implemented.");
+}
+
+function im() {
+alert ("IM function not yet implemented.");
+}
+
+function email() {
+alert ("Email function not yet implemented.");
+}
+function browser() {
+alert ("Browser function not yet implemented.");
+}
+
+//	End Apps
+
+function hidemenu() {
+document.getElementById('inside').style.display="none";
+document.getElementById('inside2').style.display="inline";
+}
+function showmenu() {
+document.getElementById('inside2').style.display="none";
+document.getElementById('inside').style.display="inline";
+}
+
+// -->
+</script>
+
+</head>
+<body onload="init();">
+<div id="main">
+	<div id="toppanel">
+			<div style="text-align: center;"><img src="xenonlogo.png" alt="Xenon Logo"  /></div>
+	</div>
+	<div id="inside">
+		<div id="leftpanel">
+			Here goes a weather feed.
+			<p><a href="#" onclick="hidemenu();">Hide the Menu</a></p>
+		</div>
+	
+		<div id="centrepanel">
+			<img src="atom.png" id="earth" alt="Earth" />
+			<img src="internet.png" alt="Moon" id="moon" onclick="internet();" onmouseover="getbigger('moon');" onmouseout="getsmaller('moon');" />
+			<img src="work.png" alt="Moon" id="moon2" onclick="work();" onmouseover="getbigger('moon2');" onmouseout="getsmaller('moon2');" />
+			<img src="games.png" alt="Moon" id="moon3" onclick="games();" onmouseover="getbigger('moon3');" onmouseout="getsmaller('moon3');" />
+			<img src="media.png" alt="Moon" id="moon4" onclick="media();" onmouseover="getbigger('moon4');" onmouseout="getsmaller('moon4');" />
+			<img src="myfiles.png" alt="Moon" id="moon5"  onclick="myfiles();" onmouseover="getbigger('moon5');" onmouseout="getsmaller('moon5');" />
+		</div>
+	
+		
+	
+		<div id="rightpanel">
+		<p>Latest News:</p>
+		<p></p>
+		<p>Building this!</p>
+		</div>
+	
+	</div>
+	
+	<div id="inside2" style="display:none;">
+			This is a sample app that would be launched via the menu. Click on the Menu button below to show the menu again.
+	</div>
+
+	<div id="bottompanel">
+		<img src="menu.png" onclick="showmenu();" alt="Show Menu" />
+	</div>
+</div>
+
+</body>
+</html>
